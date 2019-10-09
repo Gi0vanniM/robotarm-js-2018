@@ -12,8 +12,22 @@
         robotArm.loadLevel("exercise 10");
 
         // Jou instructies volgen hier
-        robotArm.moveRight();
-        robotArm.moveRight();
+        robotArm.speed = 100000;
+
+        for (var i = 0; i < 4; i++) {
+            robotArm.moveRight();
+        }
+        for (var i1 = 0; i1 < 5; i1++) {
+            robotArm.grab();
+            for (var i11 = 0; i11 <= i1 + i1; i11++) {
+                robotArm.moveRight();
+            }
+            robotArm.drop();
+            for (var i12 = 0; i12 <= i1 * 2 + 1; i12++) {
+                robotArm.moveLeft();
+            }
+        }
+
 
         // De door jou opgegeven instructies uitvoeren
         robotArm.run();
